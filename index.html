@@ -7,373 +7,545 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
 
-        :root {
-            --primary: #739272;
-            --secondary: #c18888;
-            --accent: #ede0d3;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-            --background: #f9f5f0;
-        }
+    :root {
+    --primary: #739272;
+    --secondary: #c18888;
+    --accent: #ede0d3;
+    --text-dark: #333;
+    --text-light: #fff;
+    --background: #f9f5f0;
+    }
 
-        body {
-            background-color: var(--background);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    body {
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+    }
 
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+    .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.7);
-            z-index: -1;
-        }
+    .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: -1;
+    }
 
-        .hero-content {
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 20px;
-            z-index: 1;
-        }
+    .hero-content {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 1;
+    }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+    .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
+    .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin: 10px;
-        }
+    .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #4a6b49);
+    color: var(--text-light);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 
-        .cta-button:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+    .cta-button:hover {
+    background: linear-gradient(135deg, var(--secondary), #a06e6e);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
+    .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    }
 
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--text-light);
-            color: var(--primary);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+    .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-        .social-link:hover {
-            background-color: var(--secondary);
-            color: var(--text-light);
-            transform: translateY(-5px);
-        }
+    .social-link:hover {
+    background: linear-gradient(135deg, var(--secondary), #a06e6e);
+    color: var(--text-light);
+    transform: translateY(-5px) rotate(10deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
+    .section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    }
 
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    .section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
 
-        .about {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
+    .section-title p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    max-width: 700px;
+    margin: 0 auto;
+    }
 
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-        }
+    .about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+    .about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    }
 
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
+    .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+    }
 
-        .about-content h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
+    .about-image img:hover {
+    transform: scale(1.03);
+    }
 
-        .about-content p {
-            margin-bottom: 20px;
-        }
+    .about-content {
+    flex: 1;
+    min-width: 300px;
+    }
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+    .about-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    }
 
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
+    .about-content p {
+    margin-bottom: 20px;
+    }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
+    .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    }
 
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
+    .service-card {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
+    .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    }
 
-        .service-card p {
-            color: var(--text-dark);
-            font-size: 0.9rem;
-        }
+    .service-card:hover::before {
+    transform: translateX(0);
+    }
 
-        .contact {
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 80px 0;
-            text-align: center;
-        }
+    .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
 
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
+    .service-card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    }
 
-        .contact p {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.1rem;
-        }
+    .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    }
 
-        .logo-button {
-            display: inline-block;
-            margin: 20px 0;
-            transition: transform 0.3s ease;
-        }
+    .service-card p {
+    font-size: 0.9rem;
+    }
 
-        .logo-button:hover {
-            transform: scale(1.1);
-        }
+    .gradient-bg-1 {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    }
 
-        .logo-button img {
-            width: 150px;
-            height: auto;
-        }
+    .gradient-bg-2 {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    }
 
-        .footer {
-            background-color: #333;
-            color: var(--text-light);
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
+    .gradient-bg-3 {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    }
 
-        .footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    .gradient-bg-4 {
+    background: linear-gradient(135deg, #654ea3, #eaafc8);
+    }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
+    .gradient-bg-5 {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    }
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
+    .gradient-bg-6 {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    }
 
-            .hero-content p {
-                font-size: 1rem;
-            }
+    .contact {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: var(--text-light);
+    padding: 80px 0;
+    text-align: center;
+    }
 
-            .section-title h2 {
-                font-size: 2rem;
-            }
+    .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    }
 
-            .about {
-                flex-direction: column;
-            }
+    .contact p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    }
 
-            .about-image {
-                max-width: 100%;
-            }
-        }
+    .logo-button {
+    display: inline-block;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    }
+
+    .logo-button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-button img {
+    width: 150px;
+    height: auto;
+    }
+
+    .footer {
+    background-color: #333;
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    }
+
+    .footer a {
+    color: var(--accent);
+    text-decoration: none;
+    }
+
+    .footer a:hover {
+    text-decoration: underline;
+    }
+
+    /* Estilos para el botón de guía gratuita */
+    .free-guide-button {
+    margin-bottom: 30px;
+    }
+
+    .guide-cta {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    }
+
+    .guide-cta:hover {
+    transform: translateY(-5px);
+    }
+
+    .guide-cta img {
+    max-width: 300px;
+    border-radius: 15px;
+    }
+
+    .guide-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    }
+
+    /* Estilos para la sección de café virtual */
+    .virtual-coffee {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    }
+
+    .coffee-content {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+    .coffee-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    }
+
+    .coffee-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    }
+
+    .coffee-button {
+    display: inline-block;
+    background: white;
+    color: #6a11cb;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .coffee-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: #f0f0f0;
+    }
+
+    @media (max-width: 768px) {
+    .hero-content h1 {
+    font-size: 2.2rem;
+    }
+
+    .hero-content p {
+    font-size: 1rem;
+    }
+
+    .section-title h2 {
+    font-size: 2rem;
+    }
+
+    .about {
+    flex-direction: column;
+    }
+
+    .about-image {
+    max-width: 100%;
+    }
+
+    .guide-cta img {
+    max-width: 250px;
+    }
+    }
     </style>
 </head>
 <body>
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Keren Briceño</h1>
-            <p>Emprendedora Digital | Trading & Marketing</p>
-            <a href="#about" class="cta-button">Conóceme</a>
-            <div class="social-links">
-                <a href="https://instagram.com/keiby_08" class="social-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.link/9vs78u" class="social-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+    <div class="free-guide-button">
+        <a href="https://wa.link/9vs78u?text=¡Hola! Me interesa la guía gratuita de trading 📈" class="guide-cta" target="_blank">
+            <img src="guia-trading.jpg" alt="Guía Gratuita de Trading">
+            <span class="guide-text">¡Obtén tu guía gratuita de Trading!</span>
+        </a>
+    </div>
+    <h1>Keren Briceño</h1>
+    <p>Emprendedora Digital | Trading & Marketing</p>
+    <a href="#about" class="cta-button">Conóceme</a>
+    <div class="social-links">
+    <a href="https://www.instagram.com/kerenbri.to/" class="social-link" target="_blank">
+    <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.link/9vs78u" class="social-link" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+    </div>
+    </div>
     </section>
 
     <div class="container" id="about">
-        <div class="section-title">
-            <h2>Sobre Mí</h2>
-            <p>Transformando conocimiento en libertad financiera</p>
-        </div>
-        <div class="about">
-            <div class="about-image">
-                <img src="profile.jpg" alt="Keren Briceño">
-            </div>
-            <div class="about-content">
-                <h3>Hola, soy Keren</h3>
-                <p>Ayudo a personas como tú a transformar su conocimiento en ingresos reales. Con experiencia en Trading, Marketing Digital y Dropshipping, te enseño cómo construir tu negocio digital desde cero.</p>
-                <p>💡 <strong>¿Mi misión?</strong> Acompañarte en cada paso de tu camino hacia el éxito, brindándote estrategias prácticas y resultados comprobados.</p>
-                <p>🤝 <strong>¿Listo para empezar?</strong> Conecta conmigo y descubre cómo puedes alcanzar tus metas financieras y personales.</p>
-                <a href="#services" class="cta-button">Mis Servicios</a>
-            </div>
-        </div>
+    <div class="section-title">
+    <h2>Sobre Mí</h2>
+    <p>Transformando conocimiento en libertad financiera</p>
+    </div>
+    <div class="about">
+    <div class="about-image">
+    <img src="profile.jpg" alt="Keren Briceño">
+    </div>
+    <div class="about-content">
+    <h3>Hola, soy Keren</h3>
+    <p>Ayudo a personas como tú a transformar su conocimiento en ingresos reales. Con experiencia en Trading, Marketing Digital y Dropshipping, te enseño cómo construir tu negocio digital desde cero.</p>
+    <p>💡 <strong>¿Mi misión?</strong> Acompañarte en cada paso de tu camino hacia el éxito, brindándote estrategias prácticas y resultados comprobados.</p>
+    <p>🤝 <strong>¿Listo para empezar?</strong> Conecta conmigo y descubre cómo puedes alcanzar tus metas financieras y personales.</p>
+    <a href="#services" class="cta-button">Mis Servicios</a>
+    </div>
+    </div>
     </div>
 
+    <section class="virtual-coffee" id="virtual-coffee">
+    <div class="container">
+        <div class="coffee-content">
+            <h2>¿Tomamos un café virtual? ☕</h2>
+            <p>Conversemos sobre tus metas y descubre cómo puedo ayudarte a alcanzarlas. Una charla informal donde conocerás esta hermosa oportunidad.</p>
+            <a href="https://wa.link/9vs78u?text=¡Hola! Me gustaría agendar un café virtual contigo 😊" class="coffee-button" target="_blank">
+                <i class="fas fa-coffee"></i> Agenda tu café virtual
+            </a>
+        </div>
+    </div>
+    </section>
+
     <div class="container" id="services">
-        <div class="section-title">
-            <h2>Mis Servicios</h2>
-            <p>Soluciones para impulsar tu crecimiento digital</p>
-        </div>
-        <div class="services">
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Trading</h3>
-                <p>Aprende estrategias efectivas para operar en los mercados financieros y generar ingresos consistentes.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Marketing Digital</h3>
-                <p>Desarrolla estrategias de marketing que te permitan posicionar tu marca y atraer clientes potenciales.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-shopping-cart"></i>
-                <h3>Dropshipping</h3>
-                <p>Crea tu tienda online sin inventario y aprende a gestionar un negocio digital rentable.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-plane"></i>
-                <h3>Turismo</h3>
-                <p>Descubre oportunidades en el sector turístico y cómo monetizarlas a través de plataformas digitales.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-language"></i>
-                <h3>Idiomas</h3>
-                <p>Potencia tus habilidades lingüísticas para expandir tu alcance en el mercado global.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-user-tie"></i>
-                <h3>Marca Personal</h3>
-                <p>Desarrolla una marca personal sólida que te posicione como referente en tu industria.</p>
-            </div>
-        </div>
+    <div class="section-title">
+    <h2>Mis Servicios</h2>
+    <p>Soluciones para impulsar tu crecimiento digital</p>
+    </div>
+    <div class="services">
+    <div class="service-card gradient-bg-1">
+    <i class="fas fa-chart-line"></i>
+    <h3>Trading</h3>
+    <p>Aprende estrategias efectivas para operar en los mercados financieros y generar ingresos consistentes, apalancándote de conocimiento en vivo y aplicativos que harán más sencillo tu camino.</p>
+    </div>
+    <div class="service-card gradient-bg-2">
+    <i class="fas fa-plane"></i>
+    <h3>Turismo</h3>
+    <p>Potencializa tu alma viajera y descubre oportunidades en el sector turístico. Monetiza a través de plataformas digitales y benefíciate de descuentos únicos para tus aventuras.</p>
+    </div>
+    <div class="service-card gradient-bg-3">
+    <i class="fas fa-handshake"></i>
+    <h3>Ventas</h3>
+    <p>Potencializa tus habilidades en ventas para impulsar tus proyectos y aprende de la mano de los mejores expertos en la industria.</p>
+    </div>
+    <div class="service-card gradient-bg-4">
+    <i class="fas fa-bullhorn"></i>
+    <h3>Marketing Digital</h3>
+    <p>Desarrolla estrategias de marketing que te permitan posicionar tu marca y atraer clientes potenciales de forma efectiva.</p>
+    </div>
+    <div class="service-card gradient-bg-5">
+    <i class="fas fa-language"></i>
+    <h3>Idiomas</h3>
+    <p>Potencia tus habilidades lingüísticas para expandir tu alcance en el mercado global y conectar con audiencias internacionales.</p>
+    </div>
+    <div class="service-card gradient-bg-6">
+    <i class="fas fa-user-tie"></i>
+    <h3>Marca Personal</h3>
+    <p>Desarrolla una marca personal sólida que te posicione como referente en tu industria y atraiga oportunidades de negocio.</p>
+    </div>
+    </div>
     </div>
 
     <section class="contact" id="contact">
-        <div class="container">
-            <h2>Conecta Conmigo</h2>
-            <p>🔗 Haz clic en los enlaces y transforma tu futuro hoy mismo.</p>
-            <a href="https://8innova.com/inn-academy/" class="logo-button" target="_blank">
-                <img src="logo.png" alt="8innova">
-            </a>
-        </div>
+    <div class="container">
+    <h2>Nuestras Páginas Principales</h2>
+    <p>🔗 Haz clic y conoce nuestras páginas principales</p>
+    <a href="https://8innova.com/inn-academy/" class="logo-button" target="_blank">
+    <img src="logo.png" alt="8innova">
+    </a>
+    <div class="social-links" style="margin-top: 30px;">
+    <a href="https://www.instagram.com/kerenbri.to/" class="social-link" target="_blank">
+    <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.link/9vs78u" class="social-link" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+    </div>
+    <p style="margin-top: 20px;">Conecta Conmigo y transforma tu futuro hoy mismo</p>
+    </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 Keren Briceño. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Keren Briceño. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
